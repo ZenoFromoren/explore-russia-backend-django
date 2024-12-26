@@ -86,19 +86,22 @@ class PostsApiTestCase(APITestCase):
         response = self.client.get(url)
         serializer_data = PostSerializer(
             [
-                self.post1,
-                self.post2,
-                self.post3,
-                self.post4,
-                self.post5,
-                self.post6,
-                self.post7,
-                self.post8,
-                self.post9,
                 self.post10,
+                self.post9,
+                self.post8,
+                self.post7,
+                self.post6,
+                self.post5,
+                self.post4,
+                self.post3,
+                self.post2,
+                self.post1,
             ],
             many=True,
         ).data
+
+        print(f"{serializer_data=}")
+        print(f"{response.data=}")
 
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         self.assertEqual(serializer_data, response.data)

@@ -24,8 +24,8 @@ class PostSerializerTestCase(TestCase):
                 "title": "Город 1",
                 "image": "https://link1.ru",
                 "text": "Город 1",
-                "createdAt": post1.createdAt.isoformat(),
-                "updatedAt": post1.updatedAt.isoformat(),
+                "created_at": post1.created_at.isoformat(),
+                "updated_at": post1.updated_at.isoformat(),
             },
             {
                 "id": post2.id,
@@ -33,8 +33,8 @@ class PostSerializerTestCase(TestCase):
                 "title": "Город 2",
                 "image": "https://link2.ru",
                 "text": "Город 2",
-                "createdAt": post2.createdAt.isoformat(),
-                "updatedAt": post2.updatedAt.isoformat(),
+                "created_at": post2.created_at.isoformat(),
+                "updated_at": post2.updated_at.isoformat(),
             },
             {
                 "id": post3.id,
@@ -42,8 +42,8 @@ class PostSerializerTestCase(TestCase):
                 "title": "Город 3",
                 "image": "https://link3.ru",
                 "text": "Город 3",
-                "createdAt": post3.createdAt.isoformat(),
-                "updatedAt": post3.updatedAt.isoformat(),
+                "created_at": post3.created_at.isoformat(),
+                "updated_at": post3.updated_at.isoformat(),
             },
         ]
         # print(expected_data)
