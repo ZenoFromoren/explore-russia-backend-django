@@ -33,6 +33,8 @@ env = environ.Env(
     EMAIL_USE_SSL=(bool),
     SERVER_EMAIL=(str),
     DEFAULT_FROM_EMAIL=(str),
+    SOCIAL_AUTH_VK_OAUTH2_KEY=(str),
+    SOCIAL_AUTH_VK_OAUTH2_SECRET=(str),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -62,7 +64,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "posts",
+    "oauth2_provider",
+    "social_django",
+    "rest_framework_social_oauth2" "posts",
     "users",
     "comments",
 ]
@@ -166,8 +170,16 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "oauth2_provider.contrib.rest_framework.OAuth2Authentication",
+        "rest_framework_social_oauth2.authentication.SocialAuthentication",
     ),
 }
+
+AUTHENTICATION_BACKENDS = [
+    "social_core.backends.vk.VKOAuth2",
+    "rest_framework_social_oauth2.backends.DjangoOAuth2",
+    "django.contrib.auth.backends.ModelBackend",
+]
 
 AUTH_USER_MODEL = "users.User"
 
@@ -214,3 +226,6 @@ EMAIL_USE_SSL = env("EMAIL_USE_SSL")
 
 SERVER_EMAIL = env("SERVER_EMAIL")
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL")
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = env("SOCIAL_AUTH_VK_OAUTH2_KEY")
+SOCIAL_AUTH_VK_OAUTH2_SECRET = env("SOCIAL_AUTH_VK_OAUTH2_SECRET")
