@@ -1,8 +1,11 @@
-FROM python:3.12.4-alpine3.20
-
-ENV PYTHONUNBUFFERED 1
+FROM python:3.10
 
 WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+RUN pip install --upgrade pip
 
 COPY requirements.txt .
 
@@ -12,4 +15,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "explore_russia_backend_django/manage.py", "runserver", "0.0.0.0:8000"]

@@ -33,8 +33,6 @@ env = environ.Env(
     EMAIL_USE_SSL=(bool),
     SERVER_EMAIL=(str),
     DEFAULT_FROM_EMAIL=(str),
-    SOCIAL_AUTH_VK_OAUTH2_KEY=(str),
-    SOCIAL_AUTH_VK_OAUTH2_SECRET=(str),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
