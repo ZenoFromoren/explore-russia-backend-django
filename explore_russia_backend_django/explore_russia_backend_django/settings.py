@@ -62,7 +62,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "social_django",
     "rest_framework_social_oauth2" "posts",
     "users",
     "comments",
