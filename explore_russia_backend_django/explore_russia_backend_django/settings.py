@@ -21,7 +21,7 @@ env = environ.Env(
     SECRET_KEY=(str),
     FRONT_HOST=(str),
     POSTGRES_DB_NAME=(str),
-    POSTGRES_USERNAME=(str),
+    POSTGRES_USER=(str),
     POSTGRES_PASSWORD=(str),
     POSTGRES_HOST=(str),
     POSTGRES_PORT=(int),
@@ -109,7 +109,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": env("POSTGRES_DB_NAME"),
-        "USER": env("POSTGRES_USERNAME"),
+        "USER": env("POSTGRES_USER"),
         "PASSWORD": env("POSTGRES_PASSWORD"),
         "HOST": env("POSTGRES_HOST"),
         "PORT": env("POSTGRES_PORT"),
