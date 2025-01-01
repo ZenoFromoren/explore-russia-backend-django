@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["python", "explore_russia_backend_django/manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "explore_russia_backend_django/manage.py", "runserver", "8000"]
