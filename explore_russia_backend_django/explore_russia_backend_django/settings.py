@@ -20,7 +20,7 @@ env = environ.Env(
     DEBUG=(bool),
     SECRET_KEY=(str),
     FRONT_HOST=(str),
-    POSTGRES_DB_NAME=(str),
+    POSTGRES_DB=(str),
     POSTGRES_USER=(str),
     POSTGRES_PASSWORD=(str),
     POSTGRES_HOST=(str),
@@ -49,7 +49,7 @@ SECRET_KEY = env("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -62,10 +62,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "rest_framework_social_oauth2",
     "posts",
     "users",
     "comments",
+    'django.contrib.postgres'
 ]
 
 MIDDLEWARE = [
@@ -108,7 +108,7 @@ WSGI_APPLICATION = "explore_russia_backend_django.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": env("POSTGRES_DB_NAME"),
+        "NAME": env("POSTGRES_DB"),
         "USER": env("POSTGRES_USER"),
         "PASSWORD": env("POSTGRES_PASSWORD"),
         "HOST": env("POSTGRES_HOST"),
@@ -167,15 +167,8 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
-        "rest_framework_social_oauth2.authentication.SocialAuthentication",
     ),
 }
-
-AUTHENTICATION_BACKENDS = [
-    "social_core.backends.vk.VKOAuth2",
-    "rest_framework_social_oauth2.backends.DjangoOAuth2",
-    "django.contrib.auth.backends.ModelBackend",
-]
 
 AUTH_USER_MODEL = "users.User"
 
