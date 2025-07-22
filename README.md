@@ -1,9 +1,9 @@
-# Explore Russia<br /> 
+# Explore Russia<br /><br />
 
-## Установка проекта и зависимостей  
+## Установка проекта и зависимостей<br /><br />
 
 ### Установка проекта
-```git clone https://github.com/ZenoFromoren/explore-russia-backend-django.git```  
+```git clone https://github.com/ZenoFromoren/explore-russia-backend-django.git```<br /><br />
 
 ### Установка зависимостей
 В папке с установленным проектом
@@ -11,7 +11,7 @@
 
 ```venv/Scripts/activate```
 
-```pip install -r requirements.txt```  
+```pip install -r requirements.txt```<br /><br />
 
 ### Запуск проекта
 ```cd explore-russia-backend-django``` (из корневой папки)
