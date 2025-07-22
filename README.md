@@ -1,9 +1,6 @@
 # Explore Russia  
 
-## Установка проекта и зависимостей
-
-
-
+## Установка проекта и зависимостей  
 
 ### Установка проекта 
 ```git clone https://github.com/ZenoFromoren/explore-russia-backend-django.git```
