@@ -2,11 +2,8 @@
 
 ## Установка проекта и зависимостей  
 
-### Установка проекта 
-```git clone https://github.com/ZenoFromoren/explore-russia-backend-django.git```
-
-
-
+### Установка проекта
+```git clone https://github.com/ZenoFromoren/explore-russia-backend-django.git```  
 
 ### Установка зависимостей
 В папке с установленным проектом
@@ -14,17 +11,11 @@
 
 ```venv/Scripts/activate```
 
-```pip install -r requirements.txt```
-
-
-
+```pip install -r requirements.txt```  
 
 ### Запуск проекта
 ```cd explore-russia-backend-django``` (из корневой папки)
-```python manage.py runserver```
-
-
-
+```python manage.py runserver```  
 
 ## Информация о проекте
 Стек: Django, DRF, PostgreSQL, DRF-nested-routes, Docker, Nginx
