@@ -12,7 +12,7 @@ class User(AbstractUser):
     )
     avatar = models.CharField(null=True)
 
-    REQUIRED_FIELDS = ("password", )
+    REQUIRED_FIELDS = ("username","password", )
 
     USERNAME_FIELD = "email"
 

@@ -1,5 +1,4 @@
 from rest_framework import mixins, viewsets
-from rest_framework.decorators import action
 from comments.models import Comment
 from comments.serializers import CommentSerializer
 from posts.models import Post

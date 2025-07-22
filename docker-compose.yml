@@ -1,0 +1,41 @@
+services:
+  database:
+    container_name: postgres-container
+    image: postgres:alpine
+    env_file: explore_russia_backend_django/.env
+    restart: always
+    ports:
+      - 5432:5432
+    networks:
+      - internal
+    volumes:
+      - database_volume:/data/database_volume
+
+  backend:
+    container_name: er-backend
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    command: "python explore_russia_backend_django/manage.py runserver 0.0.0.0:8000 
+              && explore_russia_backend_django/manage.py makemigrations 
+              && explore_russia_backend_django/manage.py migrate"
+    image: er-backend-docker
+    depends_on:
+      - database
+    links:
+      - database:database
+    restart: always
+    env_file:
+      - explore_russia_backend_django/.env
+    ports:
+      - 8000:8000
+    networks:
+      - internal
+
+volumes:
+  database_volume:
+
+networks:
+  internal:
+    driver: bridge
+  external:

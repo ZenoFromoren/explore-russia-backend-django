@@ -5,9 +5,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from users.models import User
 from users.serializers import CustomTokenObtainPairSerializer, UserSerializer
 from django.forms.models import model_to_dict
-from rest_framework.views import APIView
 import random
-from django.core.mail import EmailMultiAlternatives, send_mail
+from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
@@ -70,7 +69,7 @@ class AuthViewSet(viewsets.ViewSet):
         )
 
         send_mail(
-            subject="Подтверждение рагистрации на explore-russia.ru",
+            subject="Подтверждение регистрации на explore-russia.ru",
             message="",
             from_email=settings.EMAIL_HOST,
             recipient_list=[request.data["email"]],

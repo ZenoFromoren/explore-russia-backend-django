@@ -1,7 +1,5 @@
-import django.urls
 from rest_framework.serializers import ModelSerializer
 from users.models import User
-from django.contrib.auth.hashers import make_password
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from django.forms.models import model_to_dict
 

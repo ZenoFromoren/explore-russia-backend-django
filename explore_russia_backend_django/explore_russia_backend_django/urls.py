@@ -21,7 +21,6 @@ from rest_framework.routers import SimpleRouter
 from posts.views import PostViewSet
 from users.views import AuthViewSet, CustomTokenObtainPairView, UserViewSet
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
     TokenRefreshView,
     TokenVerifyView,
 )

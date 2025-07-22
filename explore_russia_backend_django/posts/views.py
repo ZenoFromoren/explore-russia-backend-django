@@ -8,7 +8,7 @@ from rest_framework.decorators import action
 
 
 class PostViewSet(ReadOnlyModelViewSet):
-    queryset = Post.objects.all().order_by("-created_at")
+    queryset = Post.objects.all()
     serializer_class = PostSerializer
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ["city", "title", "text"]
@@ -16,4 +16,5 @@ class PostViewSet(ReadOnlyModelViewSet):
 
     @action(methods=["GET"], detail=False, serializer_class=PostSerializer)
     def last(self, request):
+        queryset = Post.objects.all().order_by("-created_at")
         return Response([post.to_dict() for post in self.queryset][:9])
