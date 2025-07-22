@@ -1,4 +1,4 @@
-# Explore Russia<br />
+# Explore Russia<br /><br />
 
 ## Установка проекта и зависимостей  
 
