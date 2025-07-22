@@ -1,5 +1,5 @@
-# Explore Russia
-<br />
+# Explore Russia__
+
 ## Установка проекта и зависимостей
 
 
