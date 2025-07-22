@@ -2,12 +2,15 @@
 
 
 
+
 ## Установка проекта и зависимостей
+
 
 
 
 ### Установка проекта 
 ```git clone https://github.com/ZenoFromoren/explore-russia-backend-django.git```
+
 
 
 
@@ -21,9 +24,11 @@
 
 
 
+
 ### Запуск проекта
 ```cd explore-russia-backend-django``` (из корневой папки)
 ```python manage.py runserver```
+
 
 
 
@@ -32,7 +37,9 @@
 
 
 
+
 ### Основные сущности
+
 
 
 
@@ -47,6 +54,7 @@
 - Дату регистрации (date_joined)
 
 Авторизация пользователей выполняена с помощью JWT
+
 
 
 
